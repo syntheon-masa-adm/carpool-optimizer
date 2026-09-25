@@ -6,8 +6,17 @@
 
 - **自動クラスタリング**: K-means法で同乗者を地理的にグループ化
 - **現実地点へのスナップ**: 数学的重心を駅・駐車場・コンビニなどの実在POIに自動補正
-- **配車最適化**: Google OR-Tools のCVRP（容量制約付きVRP）ソルバーで総移動時間を最小化
+- **配車最適化**: CVRP（容量制約付き配車問題）アルゴリズムで総移動時間を最小化
 - **ルート可視化**: Google Maps上でルート・集合場所・マーカーをインタラクティブに表示
+- **完全ブラウザ完結対応**: サーバー不要でGitHub Pages上ですぐに実行可能
+
+## 🌐 公開URL (GitHub Pages)
+
+**[https://syntheon-masa-adm.github.io/carpool-optimizer/](https://syntheon-masa-adm.github.io/carpool-optimizer/)**
+
+> 💡 **ブラウザのみで即時利用可能**  
+> 右上の「APIキー設定」に有効なGoogle Maps APIキー（Geocoding API, Places API, Distance Matrix API, Directions API, Maps JavaScript API が有効なキー）を入力するだけで、サーバー構築なしにその場で配車計画とルート最適化を実行できます。
+
 
 ## 🛠 技術スタック
 
