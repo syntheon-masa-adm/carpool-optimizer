@@ -154,4 +154,4 @@ carpool-optimizer/
 
 ## 📝 ライセンス
 
-MIT
+SYNTHEON
