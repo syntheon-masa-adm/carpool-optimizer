@@ -5,22 +5,14 @@ import type { OptimizeResponse } from '../types';
 interface Props {
   result: OptimizeResponse | null;
   apiKey: string;
-  onMapReady?: (map: google.maps.Map) => void;
 }
 
 const ROUTE_COLORS = ['#4285F4', '#EA4335', '#FBBC04', '#34A853', '#FF6D01', '#46BDC6', '#7B1FA2', '#C2185B'];
 
-const MapContent: React.FC<{ result: OptimizeResponse | null; onMapReady?: (map: google.maps.Map) => void }> = ({ result, onMapReady }) => {
+const MapContent: React.FC<{ result: OptimizeResponse | null }> = ({ result }) => {
   const map = useMap();
   const [openInfoWindow, setOpenInfoWindow] = useState<string | null>(null);
   const [polylines, setPolylines] = useState<google.maps.Polyline[]>([]);
-
-  // マップが準備できたら親に通知
-  useEffect(() => {
-    if (map && onMapReady) {
-      onMapReady(map);
-    }
-  }, [map, onMapReady]);
 
   useEffect(() => {
     if (!map) return;
@@ -101,13 +93,13 @@ const MapContent: React.FC<{ result: OptimizeResponse | null; onMapReady?: (map:
   );
 }
 
-export const MapView: React.FC<Props> = ({ result, apiKey, onMapReady }) => {
+export const MapView: React.FC<Props> = ({ result, apiKey }) => {
   if (!apiKey) {
     return (
       <div className="w-full h-full bg-gray-100 rounded-xl overflow-hidden shadow-sm flex items-center justify-center text-gray-400">
         <div className="text-center">
           <div className="text-4xl mb-2">🗺️</div>
-          <p>APIキーを設定すると地図が表示されます</p>
+          <p>VITE_GOOGLE_MAPS_API_KEY を設定すると地図が表示されます</p>
         </div>
       </div>
     );
@@ -115,9 +107,9 @@ export const MapView: React.FC<Props> = ({ result, apiKey, onMapReady }) => {
 
   return (
     <div className="w-full h-full bg-gray-100 rounded-xl overflow-hidden shadow-sm">
-      <APIProvider apiKey={apiKey} libraries={['geometry', 'places']}>
+      <APIProvider apiKey={apiKey} libraries={['geometry']}>
         <Map defaultCenter={{ lat: 35.6762, lng: 139.6503 }} defaultZoom={10} mapId="carpool-map">
-          <MapContent result={result} onMapReady={onMapReady} />
+          <MapContent result={result} />
         </Map>
       </APIProvider>
     </div>

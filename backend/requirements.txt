@@ -5,3 +5,4 @@ scikit-learn==1.6.1
 ortools==9.12.4544
 pydantic==2.10.4
 python-dotenv==1.0.1
+gunicorn==23.0.0
