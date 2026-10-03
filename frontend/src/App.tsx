@@ -37,7 +37,7 @@ function App() {
         <div className="flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
-              🚗 車割りオプティマイザー
+              🚗 車割りくん
             </h1>
             <p className="text-slate-500 text-sm mt-1">大会遠征の配車を自動最適化</p>
           </div>
@@ -80,7 +80,7 @@ function App() {
       </main>
 
       <footer className="bg-white border-t px-6 py-3 text-center text-xs text-slate-400">
-        車割りオプティマイザー — APIキーはサーバー側で安全に管理されています
+        車割りくん — 入力されたデータが集計されることはありません
       </footer>
     </div>
   );
