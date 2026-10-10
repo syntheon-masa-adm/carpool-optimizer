@@ -168,6 +168,6 @@ carpool-optimizer/
 
 ---
 
-## 📄 ライセンス
+##  開発元
 
-MIT License
+Syntheon
