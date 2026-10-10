@@ -13,17 +13,18 @@
 ---
 
 ##  このアプリの簡単な構造の説明
+↓のこの図形綺麗に描くのむずいわ。ちょっとズレちまった。
 
 ```
 ┌─────────────────────┐       HTTPS (POST /api/optimize)       ┌──────────────────────────┐
-│   フロントエンド      │ ─────────────────────────────────────▶ │   バックエンド (API)       │
-│   React / Vite       │                                        │   FastAPI / Python         │
-│   GitHub Pages       │ ◀───────────────────────────────────── │   Cloud Run               │
-│                      │       JSON (routes, polylines)         │                            │
-│  Maps JS API で描画  │                                        │  Geocoding / Places /      │
-│  (地図表示のみ)       │                                        │  Distance Matrix /         │
-└─────────────────────┘                                        │  Directions API            │
-                                                               │  + K-means + OR-Tools      │
+│   フロントエンド      │ ─────────────────────────────────────▶   │   バックエンド (API)        │
+│   React / Vite       │                                        │   FastAPI / Python       │
+│   GitHub Pages       │ ◀───────────────────────────────────── │   Cloud Run              │
+│                      │       JSON (routes, polylines)         │                          │
+│  Maps JS API で描画   │                                        │  Geocoding / Places /     │
+│  (地図表示のみ)        │                                         │  Distance Matrix /        │
+└─────────────────────┘                                        │  Directions API           │
+                                                               │  + K-means + OR-Tools     │
                                                                └──────────────────────────┘
 ```
 
